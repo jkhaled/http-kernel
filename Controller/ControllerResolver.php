@@ -77,7 +77,7 @@ class ControllerResolver implements ArgumentResolverInterface, ControllerResolve
         }
 
         if (is_object($controller)) {
-            if (method_exists($controller, '__invoke')) {
+            if (is_callable($controller)) {
                 return $controller;
             }
 
